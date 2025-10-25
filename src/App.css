@@ -1,0 +1,203 @@
+/* --- RESET BÁSICO & ESTILOS GLOBAIS --- */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Tema escuro padrão do Vite */
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.App {
+  text-align: center;
+}
+
+section {
+  padding: 4rem 2rem;
+  overflow: hidden; /* Evita que o hover do card cause barras de rolagem */
+}
+
+h1 {
+  font-size: 3.8rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- SESSÃO 1: BANNER --- */
+.banner {
+  background-color: #007BFF; /* Fundo azul */
+  color: white; /* Letras brancas */
+  padding: 6rem 2rem;
+}
+
+/* --- SESSÃO 2: TIPOS DE CLOUD --- */
+.cloud-types {
+  background-color: #f9f9f9; /* Fundo claro para contraste */
+  color: #333; /* Texto escuro */
+}
+
+.cloud-types p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.types-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.types-container article {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* --- SESSÃO 3: MODELOS DE SERVIÇO (CARDS) --- */
+.service-models {
+  /* Mantém o fundo escuro padrão */
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Para os cards quebrarem em telas menores */
+}
+
+.card {
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  
+  /* Transição suave para o efeito :hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+  color: #0099ff; /* Destaque azul para o título */
+  font-size: 1.8rem;
+}
+
+.card h4 {
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Efeito :hover solicitado */
+.card:hover {
+  transform: translateY(-10px); /* Levanta o card */
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.3); /* Sombra azul brilhante */
+}
+
+/* --- SESSÃO 4: PROVEDORES --- */
+.providers {
+  background-color: #f9f9f9; /* Fundo claro */
+  color: #333;
+}
+
+/* --- SESSÃO 5: CONSUMIDORES --- */
+.consumers {
+  /* Mantém o fundo escuro padrão */
+}
+
+
+/* --- Estilo comum para as seções 4 e 5 --- */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.logo-container img {
+  height: 70px; /* Tamanho padrão para os logos */
+  max-width: 180px;
+  object-fit: contain;
+  filter: grayscale(1); /* Logos em escala de cinza */
+  opacity: 0.7;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-container img:hover {
+  filter: grayscale(0); /* Cor original ao passar o mouse */
+  opacity: 1;
+}
+
+/* Ajuste para logos escuros em fundo escuro (Seção 5) */
+.consumers .logo-container img {
+  /* Inverte a cor e deixa em escala de cinza (para logos pretos virarem brancos) */
+  /*filter: brightness(0) invert(1) grayscale(1);*/
+  opacity: 0.6;
+}
+
+.consumers .logo-container img:hover {
+  /*filter: none; /* Remove todos os filtros para mostrar a cor original */
+  opacity: 1;
+}
+
+/* --- RESPONSIVIDADE (Exemplo simples) --- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+
+  .types-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .types-container article {
+    width: 85%;
+  }
+
+  .card {
+    width: 80%;
+  }
+  
+  .logo-container {
+    gap: 2.5rem;
+  }
+
+  .logo-container img {
+    height: 50px;
+  }
+}
